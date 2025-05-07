@@ -52,7 +52,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Компания */}
         <div className="border p-4">
           <h4 className="font-semibold mb-2">Компания</h4>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -73,7 +72,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Помощь */}
         <div className="border p-4">
           <h4 className="font-semibold mb-2">Помощь</h4>
           <ul className="space-y-1">
