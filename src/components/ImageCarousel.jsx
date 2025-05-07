@@ -18,7 +18,7 @@ const bannerImages = [
 
 const PrevArrow = ({ onClick }) => (
   <button
-    className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow"
+    className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow"
     onClick={onClick}
   >
     &#8592;
@@ -27,7 +27,7 @@ const PrevArrow = ({ onClick }) => (
 
 const NextArrow = ({ onClick }) => (
   <button
-    className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow"
+    className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow"
     onClick={onClick}
   >
     &#8594;
@@ -49,7 +49,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="max-w-[1200px] mx-auto my-[15px]">
+    <div className="max-w-[1200px] w-full mx-auto my-4 px-2">
       <div className="relative rounded overflow-hidden mb-6">
         <SliderSlick {...settings}>
           {bannerImages.map((src, idx) => (
@@ -57,19 +57,19 @@ const Slider = () => {
               <img
                 src={src}
                 alt={`banner-${idx}`}
-                className="w-full h-[434px] object-cover rounded"
+                className="w-full h-[200px] sm:h-[300px] md:h-[400px] object-cover rounded"
               />
             </div>
           ))}
         </SliderSlick>
       </div>
 
-      <div className="flex gap-[40px] justify-between">
-        <div className="bg-blue-100 w-[285px] h-[200px] flex-col py-[19.5px] rounded text-center flex justify-center items-center hover:bg-red-500 transition">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="bg-blue-100 w-full h-[200px] flex flex-col py-5 px-4 rounded text-center justify-center items-center hover:bg-red-500 transition">
           <h1 className="font-bold text-lg text-black hover:text-white transition">
             Добро пожаловать!
           </h1>
-          <p className="py-[9px] text-sm px-4 text-black hover:text-white transition">
+          <p className="py-2 text-sm text-black hover:text-white transition">
             Войдите, чтобы оставлять отзывы <br /> и пользоваться другими
             функциями авторизованных пользователей.
           </p>
@@ -82,18 +82,18 @@ const Slider = () => {
           </Button>
         </div>
 
-        <div className="bg-blue-100 w-[285px] h-[200px] text-center flex gap-4 justify-center items-center rounded hover:bg-red-500 transition">
+        <div className="bg-blue-100 w-full h-[200px] text-center flex gap-4 justify-center items-center rounded hover:bg-red-500 transition">
           <h3 className="font-bold text-[18px] leading-[100%] text-blue-500 hover:text-white transition">
             Покупать <br /> как юрлицо
           </h3>
-          <Briefcase className="w-12 h-12 text-blue-400 mb-2 hover:text-white transition" />
+          <Briefcase className="w-12 h-12 text-blue-400 hover:text-white transition" />
         </div>
 
         <div>
           <img
             src={doczon}
             alt="Doczon"
-            className="w-[285px] h-[200px] rounded hover:scale-105 transition"
+            className="w-full h-[200px] object-cover rounded hover:scale-105 transition"
           />
         </div>
 
@@ -101,7 +101,7 @@ const Slider = () => {
           <img
             src={foodee}
             alt="Foodee"
-            className="w-[285px] h-[200px] rounded hover:scale-105 transition"
+            className="w-full h-[200px] object-cover rounded hover:scale-105 transition"
           />
         </div>
       </div>
