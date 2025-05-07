@@ -28,6 +28,21 @@ const Cards = ({ addToCart }) => {
     }));
   };
 
+  const renderStars = (rating) => {
+    const fullStars = Math.floor(rating);
+    const stars = [];
+
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <span key={i} className={i <= fullStars ? "text-yellow-400" : "text-gray-300"}>
+          ★
+        </span>
+      );
+    }
+
+    return stars;
+  };
+
   if (loading) return <p className="text-center mt-10">Yuklanmoqda...</p>;
   if (error) return <p className="text-center text-red-500 mt-10">{error}</p>;
 
@@ -69,6 +84,10 @@ const Cards = ({ addToCart }) => {
             />
 
             <h2 className="text-[17px] font-semibold mt-3">{product.name}</h2>
+
+            <div className="flex items-center gap-1 mt-1">
+              {renderStars(product.rating || 0)} 
+            </div>
 
             <div className="flex items-center gap-2 mt-2">
               {product.discountPrice ? (
